@@ -2,6 +2,7 @@ package com.tencent.qcloud.cosxml.sample.ObjectSample;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Environment;
 import android.os.Handler;
 import android.util.Log;
 
@@ -35,11 +36,12 @@ public class GetObjectSample {
     }
     public ResultHelper start(){
         ResultHelper resultHelper = new ResultHelper();
-        String bucket = qServiceCfg.getBucketForObjectAPITest();
-        String cosPath = qServiceCfg.getGetCosPath();
-        String downloadDir = qServiceCfg.getDownloadDir();
+//        http://a111-1251440030.cos.ap-guangzhou.myqcloud.com/20190428005204-631171-log.zip
+        String bucket = "a111-1251440030";
+        String cosPath = "20190428005204-631171-log.zip";
+        String downloadDir = Environment.getExternalStorageDirectory().getPath() + "/demo_cos_download";
 
-        getObjectRequest = new GetObjectRequest(bucket, cosPath, downloadDir);
+        getObjectRequest = new GetObjectRequest(bucket, cosPath, downloadDir, "fwefewf.zip");
 
         getObjectRequest.setSign(600,null,null);
         getObjectRequest.setRange(1);
@@ -71,11 +73,13 @@ public class GetObjectSample {
      *
      */
     public void startAsync(final Activity activity){
-        String bucket = qServiceCfg.getBucketForObjectAPITest();
-        String cosPath = qServiceCfg.getGetCosPath();
-        String downloadDir = qServiceCfg.getDownloadDir();
+//        http://a111-1251440030.cos.ap-guangzhou.myqcloud.com/20190428005204-631171-log.zip
+        String bucket = "a111-1251440030";
+        String cosPath = "20190428005204-631171-log.zip";
+        String downloadDir = Environment.getExternalStorageDirectory().getPath() + "/demo_cos_download";
 
-        getObjectRequest = new GetObjectRequest(bucket, cosPath, downloadDir);
+        Log.e("fwef", downloadDir);
+        getObjectRequest = new GetObjectRequest(bucket, cosPath, downloadDir, "fwefewf.zip");
 
         getObjectRequest.setSign(600,null,null);
         getObjectRequest.setRange(1);

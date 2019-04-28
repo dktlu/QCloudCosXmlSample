@@ -25,16 +25,16 @@ import java.util.Map;
 public class QServiceCfg {
 
     /** 腾讯云 cos 服务的 appid */
-    private final String appid = "1252386093";
+    private final String appid = "1251440030";
 
     /** appid 对应的 秘钥 */
-    private final String secretId = "填写密钥secretId";
+    private final String secretId = "AKIDhHByeNERlTORPSBQMBEVcsEeu8CUx8Sa";
 
     /** appid 对应的 秘钥 */
-    private final String secretKey = "填写密钥secretKey";
+    private final String secretKey = "tZ6RvENwIKICvELI7pRtIbArDPPEoKa9";
 
     /** bucketForObjectAPITest 所处在的地域 */
-    private String region = Region.AP_Guangzhou.getRegion();
+    private String region = "ap-guangzhou";
 
 
     /**
